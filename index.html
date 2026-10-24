@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Лапа — ветеринарная клиника</title>
+  <meta name="description" content="Ветклиника «Лапа»: приём кошек, собак и экзотических животных, прививки, операции, анализы. Онлайн-запись и календарь прививок.">
+  <meta name="theme-color" content="#3f6b5c">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%233f6b5c'/%3E%3Cg fill='%23ffd8be'%3E%3Cellipse cx='16' cy='20' rx='6' ry='5'/%3E%3Ccircle cx='9.5' cy='13' r='2.6'/%3E%3Ccircle cx='14' cy='9.5' r='2.6'/%3E%3Ccircle cx='18.5' cy='9.5' r='2.6'/%3E%3Ccircle cx='23' cy='13' r='2.6'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-row">
+      <a class="logo" href="#top"><span class="paw" aria-hidden="true"></span>Лапа</a>
+      <nav class="links" aria-label="Разделы">
+        <a href="#prices">Цены</a>
+        <a href="#vaccines">Прививки</a>
+        <a href="#doctors">Врачи</a>
+        <a href="#urgent">Срочно?</a>
+      </nav>
+      <a class="btn small" href="#booking">Записаться</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="tag">Ветеринарная клиника на Садовой · с 2014 года</p>
+          <h1>Лечим бережно, <span>объясняем понятно</span></h1>
+          <p class="lead">Кошки, собаки, птицы, грызуны и рептилии. Своя лаборатория, УЗИ и операционная, приём без выходных и запись онлайн за минуту.</p>
+          <div class="actions">
+            <a class="btn" href="#booking">Записаться на приём</a>
+            <a class="btn ghost" href="#vaccines">Календарь прививок</a>
+          </div>
+          <ul class="perks">
+            <li>Анализы за 1 час</li>
+            <li>Ежедневно 9:00–21:00</li>
+            <li>Вызов врача на дом</li>
+          </ul>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 400 360">
+            <circle cx="200" cy="190" r="150" fill="#ffd8be"/>
+            <circle cx="300" cy="80" r="36" fill="#cfe3d8"/>
+            <g transform="translate(118 120)">
+              <!-- кот -->
+              <path d="M10 160 C10 90 40 60 80 60 C120 60 150 90 150 160 Z" fill="#3f6b5c"/>
+              <path d="M30 70 L40 20 L66 58 Z M130 70 L120 20 L94 58 Z" fill="#3f6b5c"/>
+              <circle cx="60" cy="100" r="7" fill="#fffaf4"/><circle cx="100" cy="100" r="7" fill="#fffaf4"/>
+              <circle cx="61" cy="101" r="3.5" fill="#24332d"/><circle cx="101" cy="101" r="3.5" fill="#24332d"/>
+              <path d="M74 118 L80 124 L86 118 Z" fill="#ff9a76"/>
+              <path d="M150 140 C190 140 196 100 176 92" stroke="#3f6b5c" stroke-width="12" fill="none" stroke-linecap="round"/>
+            </g>
+            <g fill="#ff9a76">
+              <ellipse cx="80" cy="300" rx="14" ry="11"/><circle cx="66" cy="284" r="5"/><circle cx="76" cy="278" r="5"/><circle cx="86" cy="278" r="5"/><circle cx="95" cy="284" r="5"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="prices">
+      <div class="wrap">
+        <h2>Цены на услуги</h2>
+        <div class="toolbar">
+          <div class="chips" id="petChips" role="group" aria-label="Животное"></div>
+          <input type="search" id="search" placeholder="Найти услугу" aria-label="Поиск по услугам">
+        </div>
+        <div class="price-list" id="priceList"></div>
+      </div>
+    </section>
+
+    <section class="section soft" id="vaccines">
+      <div class="wrap vacc-grid">
+        <div>
+          <h2>Календарь прививок</h2>
+          <p class="muted">Укажите дату рождения котёнка или щенка, и мы покажем типовой график прививок с датами обработки от глистов. Точную схему врач подберёт на первом приёме.</p>
+          <form class="card vacc-form" id="vaccForm">
+            <div class="seg" role="radiogroup" aria-label="Кто">
+              <label><input type="radio" name="kind" value="cat" checked><span>Котёнок</span></label>
+              <label><input type="radio" name="kind" value="dog"><span>Щенок</span></label>
+            </div>
+            <label class="field">Дата рождения<input type="date" name="birth" required></label>
+          </form>
+        </div>
+        <ol class="timeline" id="timeline" aria-live="polite"></ol>
+      </div>
+    </section>
+
+    <section class="section" id="doctors">
+      <div class="wrap">
+        <h2>Врачи</h2>
+        <div class="doctors" id="doctors-list"></div>
+      </div>
+    </section>
+
+    <section class="section soft" id="booking">
+      <div class="wrap book-grid">
+        <div>
+          <h2>Запись на приём</h2>
+          <p class="muted">Выберите врача и свободное время. Подтвердим запись звонком в течение 15 минут.</p>
+          <label class="field">Врач<select id="doctor"></select></label>
+          <div class="slots" id="slots"></div>
+          <p class="err" data-for="slot"></p>
+        </div>
+        <form class="card" id="bookForm" novalidate>
+          <p class="chosen" id="chosen">Время не выбрано</p>
+          <label class="field">Ваше имя<input name="owner" autocomplete="name"></label>
+          <p class="err" data-for="owner"></p>
+          <label class="field">Телефон<input name="phone" type="tel" autocomplete="tel" placeholder="+7 900 000-00-00"></label>
+          <p class="err" data-for="phone"></p>
+          <label class="field">Кличка питомца<input name="petName"></label>
+          <p class="err" data-for="petName"></p>
+          <label class="field">Что беспокоит<textarea name="note" rows="3" placeholder="Необязательно"></textarea></label>
+          <button class="btn wide" type="submit">Записаться</button>
+          <p class="ok" id="bookOk" hidden></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section urgent" id="urgent">
+      <div class="wrap">
+        <h2>Когда к врачу нужно сегодня</h2>
+        <p>Если заметили хотя бы одно из этого, не ждите планового приёма: звоните <a href="tel:+74950000000">+7 495 000-00-00</a> или приезжайте.</p>
+        <ul class="urgent-list" id="urgentList"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">Ветклиника «Лапа» · ул. Садовая, 12 · ежедневно 9:00–21:00 · Демонстрационный сайт, сделал <a href="https://whysafe.ru">whysafe</a></div>
+  </footer>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
